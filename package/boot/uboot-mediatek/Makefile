@@ -1063,6 +1063,18 @@ define U-Boot/mt7988_rfb-sd
   DEPENDS:=+trusted-firmware-a-mt7988-sdmmc-comb
 endef
 
+define U-Boot/mt7981_umi_uax3000e
+  NAME:=UMI UAX3000E
+  BUILD_SUBTARGET:=filogic
+  BUILD_DEVICES:=umi_uax3000e
+  UBOOT_CONFIG:=mt7981_rfb  # 改为使用现有的配置
+  UBOOT_IMAGE:=u-boot.fip
+  BL2_BOOTDEV:=emmc
+  BL2_SOC:=mt7981
+  BL2_DDRTYPE:=ddr4
+  DEPENDS:=+trusted-firmware-a-mt7981-emmc-ddr4
+endef
+
 UBOOT_TARGETS := \
 	mt7620_mt7530_rfb \
 	mt7620_rfb \
