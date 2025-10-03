@@ -255,6 +255,18 @@ define U-Boot/mt7981_cmcc_a10
   DEPENDS:=+trusted-firmware-a-mt7981-spim-nand-ddr3
 endef
 
+define U-Boot/mt7981_umi_uax3000e
+  NAME:=UMI UAX3000E
+  BUILD_SUBTARGET:=filogic
+  BUILD_DEVICES:=umi_uax3000e
+  UBOOT_CONFIG:=mt7981_umi_uax3000e
+  UBOOT_IMAGE:=u-boot.fip
+  BL2_BOOTDEV:=emmc
+  BL2_SOC:=mt7981
+  BL2_DDRTYPE:=ddr4
+  DEPENDS:=+trusted-firmware-a-mt7981-emmc-ddr4
+endef
+
 define U-Boot/mt7981_cmcc_rax3000m-emmc
   NAME:=CMCC RAX3000M
   BUILD_SUBTARGET:=filogic
@@ -1074,6 +1086,7 @@ UBOOT_TARGETS := \
 	mt7981_abt_asr3000 \
 	mt7981_cetron_ct3003 \
 	mt7981_cmcc_a10 \
+	mt7981_umi_uax3000e \
 	mt7981_cmcc_rax3000m-emmc \
 	mt7981_cmcc_rax3000m-nand \
 	mt7981_cmcc_rax3000me-emmc-ddr3 \
